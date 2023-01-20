@@ -48,5 +48,10 @@ namespace Kursovaya1._0
                 MessageBox.Show("Неверный логин или пароль");
             }
         }
+
+        private void passField_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
