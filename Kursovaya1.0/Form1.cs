@@ -67,16 +67,49 @@ namespace Kursovaya1._0
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            loginField.Text = "login";
+            loginField.ForeColor = Color.Gray;
+            passField.Text = "password";
+            passField.ForeColor = Color.Gray;
         }
 
-
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        private void loginField_Enter(object sender, EventArgs e)
         {
+            if(loginField.Text == "login")
+            {
+                loginField.Text = "";
+                loginField.ForeColor = Color.Black;
+            }
+        }
 
+        private void loginField_Leave(object sender, EventArgs e)
+        {
+            if (loginField.Text=="")
+            {
+                loginField.ForeColor = Color.Gray;
+                loginField.Text = "login";
+            }
+        }
+
+        private void passField_Enter(object sender, EventArgs e)
+        {
+            if (passField.Text == "password")
+            {
+                passField.Text = "";
+                passField.ForeColor = Color.Black;
+            }
+        }
+
+        private void passField_Leave(object sender, EventArgs e)
+        {
+            if (passField.Text == "")
+            {
+                passField.ForeColor = Color.Gray;
+                passField.Text = "password";
+            }
         }
     }
 }
