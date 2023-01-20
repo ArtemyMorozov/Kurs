@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Kursovaya1._0
 {
@@ -49,12 +50,31 @@ namespace Kursovaya1._0
             }
         }
 
+
         private void passField_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void loginField_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+   
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }
