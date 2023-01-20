@@ -53,5 +53,10 @@ namespace Kursovaya1._0
         {
 
         }
+
+        private void loginField_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
