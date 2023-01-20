@@ -74,6 +74,7 @@ namespace Kursovaya1._0
             loginField.ForeColor = Color.Gray;
             passField.Text = "password";
             passField.ForeColor = Color.Gray;
+            passField.UseSystemPasswordChar = false;
         }
 
         private void loginField_Enter(object sender, EventArgs e)
@@ -100,6 +101,7 @@ namespace Kursovaya1._0
             {
                 passField.Text = "";
                 passField.ForeColor = Color.Black;
+                passField.UseSystemPasswordChar = true;
             }
         }
 
@@ -109,6 +111,7 @@ namespace Kursovaya1._0
             {
                 passField.ForeColor = Color.Gray;
                 passField.Text = "password";
+                passField.UseSystemPasswordChar = false;
             }
         }
     }

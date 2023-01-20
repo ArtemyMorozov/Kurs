@@ -71,6 +71,8 @@
             this.passField.TabIndex = 2;
             this.passField.UseSystemPasswordChar = true;
             this.passField.TextChanged += new System.EventHandler(this.passField_TextChanged);
+            this.passField.Enter += new System.EventHandler(this.passField_Enter);
+            this.passField.Leave += new System.EventHandler(this.passField_Leave);
             // 
             // Form1
             // 
