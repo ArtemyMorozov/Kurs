@@ -9,7 +9,7 @@ namespace Kursovaya1._0
 {
     internal class DataBase
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=root;database=users");
+        MySqlConnection connection = new MySqlConnection("server=sql11.freesqldatabase.com;port=3306;username=sql11592104;password=nAh975wzgx;database=sql11592104");
 
         public void openConnection()
         {
