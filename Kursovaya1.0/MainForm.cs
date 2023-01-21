@@ -51,7 +51,7 @@ namespace Kursovaya1._0
             Application.Exit();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
