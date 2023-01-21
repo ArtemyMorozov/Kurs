@@ -44,3 +44,4 @@ C:\Users\79210\Desktop\Kurs\Kursovaya1.0\bin\Debug\MySql.Data.xml
 C:\Users\79210\Desktop\Kurs\Kursovaya1.0\obj\Debug\Kursovaya1.0.exe.config
 C:\Users\79210\Desktop\Kurs\Kursovaya1.0\obj\Debug\Kursovaya1.0.csproj.CopyComplete
 C:\Users\79210\Desktop\Kurs\Kursovaya1.0\bin\Debug\MySql.Data.dll
+C:\Users\zavpe\Documents\GitHub\Kurs\Kursovaya1.0\obj\Debug\Kursovaya1._0.MainForm.resources
