@@ -57,7 +57,6 @@
             this.loginField.Size = new System.Drawing.Size(190, 35);
             this.loginField.TabIndex = 1;
             this.loginField.Tag = "";
-            this.loginField.TextChanged += new System.EventHandler(this.loginField_TextChanged);
             this.loginField.Enter += new System.EventHandler(this.loginField_Enter);
             this.loginField.Leave += new System.EventHandler(this.loginField_Leave);
             // 
@@ -70,7 +69,6 @@
             this.passField.Size = new System.Drawing.Size(190, 30);
             this.passField.TabIndex = 2;
             this.passField.UseSystemPasswordChar = true;
-            this.passField.TextChanged += new System.EventHandler(this.passField_TextChanged);
             this.passField.Enter += new System.EventHandler(this.passField_Enter);
             this.passField.Leave += new System.EventHandler(this.passField_Leave);
             // 

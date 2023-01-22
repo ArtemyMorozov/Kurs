@@ -42,31 +42,17 @@ namespace Kursovaya1._0
 
             if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Вход выполнен");
+                this.Hide();
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+                //MessageBox.Show("Вход выполнен");
             }
             else
             {
                 MessageBox.Show("Неверный логин или пароль");
             }
+            db.closeConnection();
         }
-
-
-        private void passField_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loginField_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-   
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
