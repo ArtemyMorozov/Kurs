@@ -35,7 +35,6 @@
             this.AnotherDateLable = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.AvailableTimeLable = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -63,13 +62,9 @@
             this.ChooseWhereToGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChooseWhereToGo.FormattingEnabled = true;
             this.ChooseWhereToGo.Location = new System.Drawing.Point(225, 10);
-            this.ChooseWhereToGo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChooseWhereToGo.Margin = new System.Windows.Forms.Padding(4);
             this.ChooseWhereToGo.Name = "ChooseWhereToGo";
-<<<<<<< HEAD
-            this.ChooseWhereToGo.Size = new System.Drawing.Size(134, 26);
-=======
-            this.ChooseWhereToGo.Size = new System.Drawing.Size(160, 32);
->>>>>>> 9a3eaa9fb61f3b7de025f066cfd11323772053f8
+            this.ChooseWhereToGo.Size = new System.Drawing.Size(134, 32);
             this.ChooseWhereToGo.TabIndex = 1;
             this.ChooseWhereToGo.SelectedIndexChanged += new System.EventHandler(this.ChooseWhereToGo_SelectedIndexChanged);
             // 
@@ -88,7 +83,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(707, 12);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(171, 29);
             this.textBox1.TabIndex = 3;
@@ -109,7 +104,7 @@
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(717, 111);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(160, 32);
             this.comboBox2.TabIndex = 7;
@@ -126,19 +121,11 @@
             this.AvailableTimeLable.TabIndex = 6;
             this.AvailableTimeLable.Text = "Доступное время:";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(165, 113);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(265, 22);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.Location = new System.Drawing.Point(165, 201);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(171, 29);
             this.textBox2.TabIndex = 10;
@@ -158,7 +145,7 @@
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.Location = new System.Drawing.Point(332, 297);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(171, 29);
             this.textBox3.TabIndex = 12;
@@ -178,7 +165,7 @@
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4.Location = new System.Drawing.Point(796, 294);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(171, 29);
             this.textBox4.TabIndex = 14;
@@ -198,7 +185,7 @@
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox5.Location = new System.Drawing.Point(165, 412);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(171, 29);
             this.textBox5.TabIndex = 16;
@@ -220,7 +207,7 @@
             this.log_in.FlatAppearance.BorderSize = 0;
             this.log_in.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.log_in.Location = new System.Drawing.Point(456, 482);
-            this.log_in.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.log_in.Margin = new System.Windows.Forms.Padding(4);
             this.log_in.Name = "log_in";
             this.log_in.Size = new System.Drawing.Size(189, 54);
             this.log_in.TabIndex = 17;
@@ -241,7 +228,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.AvailableTimeLable);
             this.Controls.Add(this.AnotherDateLable);
@@ -250,7 +236,7 @@
             this.Controls.Add(this.ChooseWhereToGo);
             this.Controls.Add(this.WhereLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -268,7 +254,6 @@
         private System.Windows.Forms.Label AnotherDateLable;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label AvailableTimeLable;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
