@@ -35,21 +35,30 @@ namespace Kursovaya1._0
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             adapter.Fill(table);
+            //создать Массив для сравнения значений из БД
+            ArrayList list = new ArrayList();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (list.Contains(table.Rows[i][1].ToString()))
+                {
+                    list.Remove(table.Rows[i][1].ToString());
+                }
+                else
+                    list.Add(table.Rows[i][1].ToString());
+            }
 
-            ChooseWhereToGo.DisplayMember = "whereToGO";// столбец для отображения
-            ChooseWhereToGo.DataSource = table;
+            ChooseWhereToGo.DataSource = list;
             ChooseWhereToGo.SelectedIndex = -1;
             
-            
-            date.DisplayMember = "id";
+
+            date.DisplayMember = "departureDate";
             date.DataSource = table;
             date.SelectedIndex = -1;
-            date.ValueMember = "id";
         }
 
         private void ChooseWhereToGo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
         
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -65,6 +74,12 @@ namespace Kursovaya1._0
         private void date_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string dest = ChooseWhereToGo.Text;
+            textBox1.Text = dest;
         }
     }
 }

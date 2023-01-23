@@ -42,6 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.log_in = new System.Windows.Forms.Button();
             this.date = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // WhereLabel
@@ -59,8 +60,8 @@
             // 
             this.ChooseWhereToGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChooseWhereToGo.FormattingEnabled = true;
-            this.ChooseWhereToGo.Location = new System.Drawing.Point(225, 10);
-            this.ChooseWhereToGo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChooseWhereToGo.Location = new System.Drawing.Point(211, 9);
+            this.ChooseWhereToGo.Margin = new System.Windows.Forms.Padding(4);
             this.ChooseWhereToGo.Name = "ChooseWhereToGo";
             this.ChooseWhereToGo.Size = new System.Drawing.Size(160, 32);
             this.ChooseWhereToGo.TabIndex = 1;
@@ -92,7 +93,7 @@
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.Location = new System.Drawing.Point(165, 201);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(171, 29);
             this.textBox2.TabIndex = 10;
@@ -112,7 +113,7 @@
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.Location = new System.Drawing.Point(332, 297);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(171, 29);
             this.textBox3.TabIndex = 12;
@@ -132,7 +133,7 @@
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4.Location = new System.Drawing.Point(796, 294);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(171, 29);
             this.textBox4.TabIndex = 14;
@@ -152,7 +153,7 @@
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox5.Location = new System.Drawing.Point(165, 412);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(171, 29);
             this.textBox5.TabIndex = 16;
@@ -174,7 +175,7 @@
             this.log_in.FlatAppearance.BorderSize = 0;
             this.log_in.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.log_in.Location = new System.Drawing.Point(456, 482);
-            this.log_in.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.log_in.Margin = new System.Windows.Forms.Padding(4);
             this.log_in.Name = "log_in";
             this.log_in.Size = new System.Drawing.Size(189, 54);
             this.log_in.TabIndex = 17;
@@ -185,18 +186,29 @@
             // 
             this.date.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.date.FormattingEnabled = true;
-            this.date.Location = new System.Drawing.Point(721, 4);
+            this.date.Location = new System.Drawing.Point(154, 106);
             this.date.Margin = new System.Windows.Forms.Padding(4);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(246, 32);
             this.date.TabIndex = 18;
             this.date.SelectedIndexChanged += new System.EventHandler(this.date_SelectedIndexChanged);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(728, 7);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(171, 29);
+            this.textBox1.TabIndex = 19;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 567);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.date);
             this.Controls.Add(this.log_in);
             this.Controls.Add(this.textBox5);
@@ -211,7 +223,7 @@
             this.Controls.Add(this.Closelabel);
             this.Controls.Add(this.ChooseWhereToGo);
             this.Controls.Add(this.WhereLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -236,5 +248,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button log_in;
         private System.Windows.Forms.ComboBox date;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
