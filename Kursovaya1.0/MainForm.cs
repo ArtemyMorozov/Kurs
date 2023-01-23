@@ -11,6 +11,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Kursovaya1._0
@@ -55,6 +56,7 @@ namespace Kursovaya1._0
             {
                 ClosestTime.Text = "Город не выбран";
             }
+            FreeSeats.Text = "Не выбрано время";
         }
 
         private void ChooseWhereToGo_SelectedIndexChanged(object sender, EventArgs e)
@@ -110,6 +112,17 @@ namespace Kursovaya1._0
 
             date.DataSource = list2;
             date.SelectedIndex = -1;
+
+            int seats;
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (dest == table.Rows[i][2].ToString())
+                {
+                    seats = Convert.ToInt32(table.Rows[i][5]);
+                    FreeSeats.Text = seats.ToString();
+                }
+            }
+
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -138,6 +151,7 @@ namespace Kursovaya1._0
             adapter.Fill(table);
             string transfer ="";
             string price = "";
+            int seats;
             ArrayList list = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
             {
@@ -145,6 +159,8 @@ namespace Kursovaya1._0
                 {
                     transfer = table.Rows[i][3].ToString();
                     price = table.Rows[i][6].ToString();
+                    seats = Convert.ToInt32(table.Rows[i][5]);
+                    FreeSeats.Text = seats.ToString();
                 }
             }
             TransferTextDate.Text = transfer.ToString();
