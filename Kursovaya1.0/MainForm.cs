@@ -50,34 +50,66 @@ namespace Kursovaya1._0
 
             ChooseWhereToGo.DataSource = list;
             ChooseWhereToGo.SelectedIndex = -1;
-            
+
+            if (ChooseWhereToGo.SelectedIndex == -1)
+            {
+                ClosestTime.Text = "Город не выбран";
+            }
         }
 
         private void ChooseWhereToGo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string lol = ChooseWhereToGo.Text;
             DataBase db = new DataBase();
 
             db.getConnection();
-            String city = "SELECT * FROM schedule";
+            String Time = "SELECT * FROM schedule";
 
-            MySqlCommand command = new MySqlCommand(city, db.getConnection());
+            MySqlCommand command = new MySqlCommand(Time, db.getConnection());
             DataTable table = new DataTable();
-
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             adapter.Fill(table);
-            string dest = ChooseWhereToGo.Text;
-            //создать Массив для сравнения значений из БД
+
+            //создать массив типа DateTime для сравнения даты и времени из бд
             ArrayList list = new ArrayList();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (table.Rows[i][1].ToString() == lol)
+                {
+                    if (list.Contains(table.Rows[i][2]))
+                    {
+                        list.Remove(table.Rows[i][2]);
+                    }
+                    else
+                        list.Add(table.Rows[i][2]);
+                }
+            }
+
+            //найти в списке ближайшее время
+            DateTime now = DateTime.Now;
+            DateTime closest = DateTime.MaxValue;
+            foreach (DateTime dt in list)
+            {
+                if (dt > now && dt < closest)
+                {
+                    closest = dt;
+                }
+            }
+
+            //вывести ближайшее время в ClosestTime
+            ClosestTime.Text = closest.ToString("f");
+            string dest = ChooseWhereToGo.Text;
+            ArrayList list2 = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 if (dest == table.Rows[i][1].ToString())
                 {
-                    list.Add(table.Rows[i][2].ToString());
+                    list2.Add(table.Rows[i][2].ToString());
                 }
             }
 
-            date.DataSource = list;
+            date.DataSource = list2;
             date.SelectedIndex = -1;
         }
         
