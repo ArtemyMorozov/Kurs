@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.PriceText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.log_in = new System.Windows.Forms.Button();
             this.date = new System.Windows.Forms.ComboBox();
@@ -150,14 +150,14 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Нужно билетов:";
             // 
-            // textBox5
+            // PriceText
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(165, 412);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(171, 29);
-            this.textBox5.TabIndex = 16;
+            this.PriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PriceText.Location = new System.Drawing.Point(165, 412);
+            this.PriceText.Margin = new System.Windows.Forms.Padding(4);
+            this.PriceText.Name = "PriceText";
+            this.PriceText.Size = new System.Drawing.Size(171, 29);
+            this.PriceText.TabIndex = 16;
             // 
             // label4
             // 
@@ -212,7 +212,7 @@
             this.Controls.Add(this.ClosestTime);
             this.Controls.Add(this.date);
             this.Controls.Add(this.log_in);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.PriceText);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label3);
@@ -245,7 +245,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox PriceText;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button log_in;
         private System.Windows.Forms.ComboBox date;

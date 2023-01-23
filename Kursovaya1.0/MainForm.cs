@@ -137,15 +137,18 @@ namespace Kursovaya1._0
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             adapter.Fill(table);
             string transfer ="";
+            string price = "";
             ArrayList list = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 if (data == table.Rows[i][2].ToString())
                 {
                     transfer = table.Rows[i][3].ToString();
+                    price = table.Rows[i][6].ToString();
                 }
             }
             TransferTextDate.Text = transfer.ToString();
+            PriceText.Text = price.ToString(); 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
