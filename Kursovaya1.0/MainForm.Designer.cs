@@ -32,7 +32,7 @@
             this.ChooseWhereToGo = new System.Windows.Forms.ComboBox();
             this.Closelabel = new System.Windows.Forms.Label();
             this.AnotherDateLable = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TransferTextDate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -89,15 +89,15 @@
             this.AnotherDateLable.TabIndex = 4;
             this.AnotherDateLable.Text = "Выбор даты:";
             // 
-            // textBox2
+            // TransferTextDate
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(165, 201);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(171, 29);
-            this.textBox2.TabIndex = 10;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.TransferTextDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TransferTextDate.Location = new System.Drawing.Point(154, 201);
+            this.TransferTextDate.Margin = new System.Windows.Forms.Padding(4);
+            this.TransferTextDate.Name = "TransferTextDate";
+            this.TransferTextDate.Size = new System.Drawing.Size(246, 29);
+            this.TransferTextDate.TabIndex = 10;
+            this.TransferTextDate.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -218,7 +218,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TransferTextDate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AnotherDateLable);
             this.Controls.Add(this.Closelabel);
@@ -239,7 +239,7 @@
         private System.Windows.Forms.ComboBox ChooseWhereToGo;
         private System.Windows.Forms.Label Closelabel;
         private System.Windows.Forms.Label AnotherDateLable;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TransferTextDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;

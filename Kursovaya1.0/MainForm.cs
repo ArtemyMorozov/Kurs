@@ -96,7 +96,6 @@ namespace Kursovaya1._0
                     closest = dt;
                 }
             }
-
             //вывести ближайшее время в ClosestTime
             ClosestTime.Text = closest.ToString("f");
             string dest = ChooseWhereToGo.Text;
@@ -134,19 +133,19 @@ namespace Kursovaya1._0
             MySqlCommand command = new MySqlCommand(city, db.getConnection());
             DataTable table = new DataTable();
 
-
+           
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             adapter.Fill(table);
-
+            string transfer ="";
             ArrayList list = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if (data == table.Rows[i][1].ToString())
+                if (data == table.Rows[i][2].ToString())
                 {
-                    list.Add(table.Rows[i][2].ToString());
+                    transfer = table.Rows[i][3].ToString();
                 }
             }
-
+            TransferTextDate.Text = transfer.ToString();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
