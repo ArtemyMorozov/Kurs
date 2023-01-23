@@ -109,7 +109,7 @@
             this.FreeSeats.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FreeSeats.Location = new System.Drawing.Point(249, 241);
             this.FreeSeats.Name = "FreeSeats";
-            this.FreeSeats.Size = new System.Drawing.Size(129, 24);
+            this.FreeSeats.Size = new System.Drawing.Size(207, 24);
             this.FreeSeats.TabIndex = 12;
             // 
             // label2
