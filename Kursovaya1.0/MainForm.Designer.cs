@@ -63,7 +63,7 @@
             this.ChooseWhereToGo.FormattingEnabled = true;
             this.ChooseWhereToGo.Location = new System.Drawing.Point(169, 8);
             this.ChooseWhereToGo.Name = "ChooseWhereToGo";
-            this.ChooseWhereToGo.Size = new System.Drawing.Size(121, 26);
+            this.ChooseWhereToGo.Size = new System.Drawing.Size(134, 26);
             this.ChooseWhereToGo.TabIndex = 1;
             this.ChooseWhereToGo.SelectedIndexChanged += new System.EventHandler(this.ChooseWhereToGo_SelectedIndexChanged);
             // 

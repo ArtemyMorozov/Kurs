@@ -36,8 +36,19 @@ namespace Kursovaya1._0
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             adapter.Fill(table);
 
-            ChooseWhereToGo.DisplayMember = "whereToGO";// столбец для отображения
-            ChooseWhereToGo.DataSource = table;
+            //создать Массив для сравнения значений из БД
+            ArrayList list = new ArrayList();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (list.Contains(table.Rows[i][1].ToString()))
+                {
+                    list.Remove(table.Rows[i][1].ToString());
+                }
+                else
+                    list.Add(table.Rows[i][1].ToString());
+            }
+
+            ChooseWhereToGo.DataSource = list;
             ChooseWhereToGo.SelectedIndex = -1;
         }
 
