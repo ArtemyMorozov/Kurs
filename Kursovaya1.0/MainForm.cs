@@ -23,7 +23,7 @@ namespace Kursovaya1._0
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            //int id;
             DataBase db = new DataBase();
 
             db.getConnection();
@@ -39,6 +39,12 @@ namespace Kursovaya1._0
             ChooseWhereToGo.DisplayMember = "whereToGO";// столбец для отображения
             ChooseWhereToGo.DataSource = table;
             ChooseWhereToGo.SelectedIndex = -1;
+            
+            
+            date.DisplayMember = "id";
+            date.DataSource = table;
+            date.SelectedIndex = -1;
+            date.ValueMember = "id";
         }
 
         private void ChooseWhereToGo_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,6 +58,11 @@ namespace Kursovaya1._0
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void date_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
