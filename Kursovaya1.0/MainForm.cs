@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -92,12 +93,38 @@ namespace Kursovaya1._0
 
         private void date_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string data = date.Text;
+            DataBase db = new DataBase();
+
+            db.getConnection();
+            String city = "SELECT * FROM schedule";
+
+            MySqlCommand command = new MySqlCommand(city, db.getConnection());
+            DataTable table = new DataTable();
+
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            adapter.Fill(table);
+
+            ArrayList list = new ArrayList();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (data == table.Rows[i][1].ToString())
+                {
+                    list.Add(table.Rows[i][2].ToString());
+                }
+            }
 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
          
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
