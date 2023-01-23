@@ -11,6 +11,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Kursovaya1._0
@@ -55,6 +56,8 @@ namespace Kursovaya1._0
             {
                 ClosestTime.Text = "Город не выбран";
             }
+
+            FreeSeats.Text = "Не выбрано время";
         }
 
         private void ChooseWhereToGo_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,12 +80,7 @@ namespace Kursovaya1._0
             {
                 if (table.Rows[i][1].ToString() == lol)
                 {
-                    if (list.Contains(table.Rows[i][2]))
-                    {
-                        list.Remove(table.Rows[i][2]);
-                    }
-                    else
-                        list.Add(table.Rows[i][2]);
+                    list.Add(table.Rows[i][2]);
                 }
             }
 
@@ -99,6 +97,7 @@ namespace Kursovaya1._0
 
             //вывести ближайшее время в ClosestTime
             ClosestTime.Text = closest.ToString("f");
+            
             string dest = ChooseWhereToGo.Text;
             ArrayList list2 = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
@@ -111,6 +110,16 @@ namespace Kursovaya1._0
 
             date.DataSource = list2;
             date.SelectedIndex = -1;
+
+            int seats;
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (dest == table.Rows[i][2].ToString())
+                {
+                    seats = Convert.ToInt32(table.Rows[i][5]);
+                    FreeSeats.Text = seats.ToString();
+                }
+            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -126,6 +135,7 @@ namespace Kursovaya1._0
         private void date_SelectedIndexChanged(object sender, EventArgs e)
         {
             string data = date.Text;
+            int seats;
             DataBase db = new DataBase();
 
             db.getConnection();
@@ -138,12 +148,12 @@ namespace Kursovaya1._0
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             adapter.Fill(table);
 
-            ArrayList list = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if (data == table.Rows[i][1].ToString())
+                if (data == table.Rows[i][2].ToString())
                 {
-                    list.Add(table.Rows[i][2].ToString());
+                    seats = Convert.ToInt32(table.Rows[i][5]);
+                    FreeSeats.Text = seats.ToString();
                 }
             }
 
