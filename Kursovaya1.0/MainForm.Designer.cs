@@ -87,12 +87,21 @@
             // 
             // textBox2
             // 
+<<<<<<< Updated upstream
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.Location = new System.Drawing.Point(124, 163);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(129, 24);
             this.textBox2.TabIndex = 10;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+=======
+            this.TransferTextDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TransferTextDate.Location = new System.Drawing.Point(116, 163);
+            this.TransferTextDate.Name = "TransferTextDate";
+            this.TransferTextDate.Size = new System.Drawing.Size(186, 24);
+            this.TransferTextDate.TabIndex = 10;
+            this.TransferTextDate.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+>>>>>>> Stashed changes
             // 
             // label1
             // 
@@ -109,7 +118,11 @@
             this.FreeSeats.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FreeSeats.Location = new System.Drawing.Point(249, 241);
             this.FreeSeats.Name = "FreeSeats";
+<<<<<<< Updated upstream
             this.FreeSeats.Size = new System.Drawing.Size(207, 24);
+=======
+            this.FreeSeats.Size = new System.Drawing.Size(159, 24);
+>>>>>>> Stashed changes
             this.FreeSeats.TabIndex = 12;
             // 
             // label2
@@ -142,11 +155,19 @@
             // 
             // textBox5
             // 
+<<<<<<< Updated upstream
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox5.Location = new System.Drawing.Point(124, 335);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(129, 24);
             this.textBox5.TabIndex = 16;
+=======
+            this.PriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PriceText.Location = new System.Drawing.Point(124, 335);
+            this.PriceText.Name = "PriceText";
+            this.PriceText.Size = new System.Drawing.Size(129, 24);
+            this.PriceText.TabIndex = 16;
+>>>>>>> Stashed changes
             // 
             // label4
             // 
