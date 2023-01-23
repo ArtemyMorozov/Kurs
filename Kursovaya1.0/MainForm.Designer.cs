@@ -31,10 +31,7 @@
             this.WhereLabel = new System.Windows.Forms.Label();
             this.ChooseWhereToGo = new System.Windows.Forms.ComboBox();
             this.Closelabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.AnotherDateLable = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.AvailableTimeLable = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -44,6 +41,8 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.log_in = new System.Windows.Forms.Button();
+            this.date = new System.Windows.Forms.ComboBox();
+            this.ClosestTime = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // WhereLabel
@@ -61,10 +60,10 @@
             // 
             this.ChooseWhereToGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChooseWhereToGo.FormattingEnabled = true;
-            this.ChooseWhereToGo.Location = new System.Drawing.Point(225, 10);
+            this.ChooseWhereToGo.Location = new System.Drawing.Point(211, 9);
             this.ChooseWhereToGo.Margin = new System.Windows.Forms.Padding(4);
             this.ChooseWhereToGo.Name = "ChooseWhereToGo";
-            this.ChooseWhereToGo.Size = new System.Drawing.Size(134, 32);
+            this.ChooseWhereToGo.Size = new System.Drawing.Size(160, 32);
             this.ChooseWhereToGo.TabIndex = 1;
             this.ChooseWhereToGo.SelectedIndexChanged += new System.EventHandler(this.ChooseWhereToGo_SelectedIndexChanged);
             // 
@@ -79,15 +78,6 @@
             this.Closelabel.TabIndex = 2;
             this.Closelabel.Text = "Ближайший рейс:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(707, 12);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 29);
-            this.textBox1.TabIndex = 3;
-            // 
             // AnotherDateLable
             // 
             this.AnotherDateLable.AutoSize = true;
@@ -99,28 +89,6 @@
             this.AnotherDateLable.TabIndex = 4;
             this.AnotherDateLable.Text = "Выбор даты:";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(717, 111);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(160, 32);
-            this.comboBox2.TabIndex = 7;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // AvailableTimeLable
-            // 
-            this.AvailableTimeLable.AutoSize = true;
-            this.AvailableTimeLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AvailableTimeLable.Location = new System.Drawing.Point(509, 113);
-            this.AvailableTimeLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.AvailableTimeLable.Name = "AvailableTimeLable";
-            this.AvailableTimeLable.Size = new System.Drawing.Size(186, 25);
-            this.AvailableTimeLable.TabIndex = 6;
-            this.AvailableTimeLable.Text = "Доступное время:";
-            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -129,6 +97,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(171, 29);
             this.textBox2.TabIndex = 10;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -214,11 +183,34 @@
             this.log_in.Text = "Оформить";
             this.log_in.UseVisualStyleBackColor = false;
             // 
+            // date
+            // 
+            this.date.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.date.FormattingEnabled = true;
+            this.date.Location = new System.Drawing.Point(154, 106);
+            this.date.Margin = new System.Windows.Forms.Padding(4);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(246, 32);
+            this.date.TabIndex = 18;
+            this.date.SelectedIndexChanged += new System.EventHandler(this.date_SelectedIndexChanged);
+            // 
+            // ClosestTime
+            // 
+            this.ClosestTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClosestTime.Location = new System.Drawing.Point(728, 7);
+            this.ClosestTime.Margin = new System.Windows.Forms.Padding(4);
+            this.ClosestTime.Name = "ClosestTime";
+            this.ClosestTime.Size = new System.Drawing.Size(334, 29);
+            this.ClosestTime.TabIndex = 19;
+            this.ClosestTime.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 567);
+            this.Controls.Add(this.ClosestTime);
+            this.Controls.Add(this.date);
             this.Controls.Add(this.log_in);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label4);
@@ -228,14 +220,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.AvailableTimeLable);
             this.Controls.Add(this.AnotherDateLable);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Closelabel);
             this.Controls.Add(this.ChooseWhereToGo);
             this.Controls.Add(this.WhereLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "MainForm";
@@ -250,10 +238,7 @@
         private System.Windows.Forms.Label WhereLabel;
         private System.Windows.Forms.ComboBox ChooseWhereToGo;
         private System.Windows.Forms.Label Closelabel;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label AnotherDateLable;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label AvailableTimeLable;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
@@ -263,5 +248,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button log_in;
+        private System.Windows.Forms.ComboBox date;
+        private System.Windows.Forms.TextBox ClosestTime;
     }
 }

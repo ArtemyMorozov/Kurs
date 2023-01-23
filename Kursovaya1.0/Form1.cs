@@ -65,7 +65,7 @@ namespace Kursovaya1._0
 
         private void loginField_Enter(object sender, EventArgs e)
         {
-            if(loginField.Text == "login")
+            if (loginField.Text == "login")
             {
                 loginField.Text = "";
                 loginField.ForeColor = Color.Black;
@@ -74,7 +74,7 @@ namespace Kursovaya1._0
 
         private void loginField_Leave(object sender, EventArgs e)
         {
-            if (loginField.Text=="")
+            if (loginField.Text == "")
             {
                 loginField.ForeColor = Color.Gray;
                 loginField.Text = "login";
