@@ -50,15 +50,34 @@ namespace Kursovaya1._0
             ChooseWhereToGo.DataSource = list;
             ChooseWhereToGo.SelectedIndex = -1;
             
-
-            date.DisplayMember = "departureDate";
-            date.DataSource = table;
-            date.SelectedIndex = -1;
         }
 
         private void ChooseWhereToGo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            DataBase db = new DataBase();
+
+            db.getConnection();
+            String city = "SELECT * FROM schedule";
+
+            MySqlCommand command = new MySqlCommand(city, db.getConnection());
+            DataTable table = new DataTable();
+
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            adapter.Fill(table);
+            string dest = ChooseWhereToGo.Text;
+            //создать Массив для сравнения значений из БД
+            ArrayList list = new ArrayList();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (dest == table.Rows[i][1].ToString())
+                {
+                    list.Add(table.Rows[i][2].ToString());
+                }
+            }
+
+            date.DataSource = list;
+            date.SelectedIndex = -1;
         }
         
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -78,8 +97,7 @@ namespace Kursovaya1._0
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string dest = ChooseWhereToGo.Text;
-            textBox1.Text = dest;
+         
         }
     }
 }
