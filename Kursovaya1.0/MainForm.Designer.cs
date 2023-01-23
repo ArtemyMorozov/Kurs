@@ -65,7 +65,11 @@
             this.ChooseWhereToGo.Location = new System.Drawing.Point(225, 10);
             this.ChooseWhereToGo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ChooseWhereToGo.Name = "ChooseWhereToGo";
+<<<<<<< HEAD
+            this.ChooseWhereToGo.Size = new System.Drawing.Size(134, 26);
+=======
             this.ChooseWhereToGo.Size = new System.Drawing.Size(160, 32);
+>>>>>>> 9a3eaa9fb61f3b7de025f066cfd11323772053f8
             this.ChooseWhereToGo.TabIndex = 1;
             this.ChooseWhereToGo.SelectedIndexChanged += new System.EventHandler(this.ChooseWhereToGo_SelectedIndexChanged);
             // 
