@@ -92,7 +92,6 @@
             this.TransferTextDate.Name = "TransferTextDate";
             this.TransferTextDate.Size = new System.Drawing.Size(186, 24);
             this.TransferTextDate.TabIndex = 10;
-            this.TransferTextDate.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -129,7 +128,7 @@
             this.TicketsAmmount.Name = "TicketsAmmount";
             this.TicketsAmmount.Size = new System.Drawing.Size(129, 24);
             this.TicketsAmmount.TabIndex = 14;
-            this.TicketsAmmount.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.TicketsAmmount.TextChanged += new System.EventHandler(this.TicketsAmmount_TextChanged);
             // 
             // label3
             // 
@@ -189,7 +188,6 @@
             this.ClosestTime.Name = "ClosestTime";
             this.ClosestTime.Size = new System.Drawing.Size(252, 24);
             this.ClosestTime.TabIndex = 19;
-            this.ClosestTime.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // MainForm
             // 

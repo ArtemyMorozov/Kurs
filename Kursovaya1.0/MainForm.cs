@@ -171,20 +171,6 @@ namespace Kursovaya1._0
             PriceText.Text = price.ToString(); 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-            string n;
-            n = TicketsAmmount.Text;
-        }
         private void Buy_Click(object sender, EventArgs e)
         {
             string connectionString = "server=sql11.freesqldatabase.com;user=sql11592104;database=sql11592104;password=nAh975wzgx;";
@@ -225,7 +211,37 @@ namespace Kursovaya1._0
             command.ExecuteNonQuery();
 
         }
-
-
+        
+        private void TicketsAmmount_TextChanged(object sender, EventArgs e)
+        {
+            
+            string tickets = TicketsAmmount.Text;
+            string Price = PriceText.Text;
+            int newn = 0;
+            int n, m;
+            if (TicketsAmmount.Text == "")
+            {
+                PriceText.Text = Price;
+                return;
+            }
+            else if (TicketsAmmount.Text != "")
+            {
+                n = Convert.ToInt32(TicketsAmmount.Text);
+                m = Convert.ToInt32(Price);
+                int sum = n * m;
+                int del = sum / n;
+                if (n > newn)
+                {
+                    PriceText.Text = sum.ToString();
+                    n = newn;
+                }      
+                else if (n < newn)
+                {
+                    PriceText.Text = del.ToString();
+                    n = newn;
+                }     
+            }
+            
+        }
     }
 }
