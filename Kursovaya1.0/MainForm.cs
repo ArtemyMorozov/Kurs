@@ -1,8 +1,10 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Win32.SafeHandles;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -100,6 +102,8 @@ namespace Kursovaya1._0
             }
             //вывести ближайшее время в ClosestTime
             ClosestTime.Text = closest.ToString("f");
+
+
             string dest = ChooseWhereToGo.Text;
             ArrayList list2 = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
@@ -109,9 +113,9 @@ namespace Kursovaya1._0
                     list2.Add(table.Rows[i][2].ToString());
                 }
             }
-
             date.DataSource = list2;
             date.SelectedIndex = -1;
+
 
             int seats;
             for (int i = 0; i < table.Rows.Count; i++)
@@ -188,12 +192,36 @@ namespace Kursovaya1._0
             MySqlConnection connection = new MySqlConnection(connectionString);
             // открываем соединение
             connection.Open();
-            int minus = 10-6;
-            string n = TicketsAmmount.Text;
-            string m = "8";
-            string query = "UPDATE schedule SET cost = 6 WHERE id = 1";
+
+            DataTable table = new DataTable();
+            String Time = "SELECT * FROM schedule";
+
+            MySqlCommand com = new MySqlCommand(Time, connection);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+            adapter.Fill(table);
+
+            int n = Convert.ToInt32(TicketsAmmount.Text);
+            int m = Convert.ToInt32(FreeSeats.Text);
+
+            string data = date.Text;
+            int number = 0;
+            ArrayList list = new ArrayList();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (data == table.Rows[i][2].ToString())
+                {
+                    number = i+1;
+                    break;
+                }
+            }
+
+
+            int minus = m - n;
+            string query = "UPDATE schedule SET availableSeats = @availableSeats WHERE id = @id";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@availableSeats", Convert.ToInt32(minus));
+            command.Parameters.AddWithValue("@id", number);
             // выполняем запрос
             command.ExecuteNonQuery();
 
