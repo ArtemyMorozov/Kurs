@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.log_in = new System.Windows.Forms.Button();
             this.loginField = new System.Windows.Forms.TextBox();
             this.passField = new System.Windows.Forms.TextBox();
@@ -82,6 +83,7 @@
             this.Controls.Add(this.loginField);
             this.Controls.Add(this.log_in);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Авторизация";

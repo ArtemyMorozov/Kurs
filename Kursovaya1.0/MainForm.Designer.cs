@@ -248,6 +248,7 @@
             this.Controls.Add(this.ChooseWhereToGo);
             this.Controls.Add(this.WhereLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Касса аэрофлота";
