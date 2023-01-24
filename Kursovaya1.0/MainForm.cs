@@ -194,7 +194,14 @@ namespace Kursovaya1._0
                 command.Parameters.AddWithValue("@id", number);
                 // выполняем запрос
                 command.ExecuteNonQuery();
-
+                MessageBox.Show("Билет оформлен успешно!");
+                ChooseWhereToGo.Text = "";
+                date.Text = "";
+                TicketsAmmount.Clear();
+                ClosestTime.Clear();
+                FreeSeats.Clear();
+                PriceText.Clear();
+                TransferTextDate.Clear();
             }
         }
         
