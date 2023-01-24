@@ -29,7 +29,6 @@ namespace Kursovaya1._0
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //int id;
             db = new DataBase();
             db.getConnection();
 
@@ -220,6 +219,21 @@ namespace Kursovaya1._0
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ClosestTime_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChooseWhereToGo_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChooseWhereToGo_Leave(object sender, EventArgs e)
+        {
+
         }
     }
 }
