@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -93,7 +94,7 @@ namespace Kursovaya1._0
             //вывести ближайшее время в ClosestTime
             ClosestTime.Text = closest.ToString("f");
 
-
+        
             string dest = ChooseWhereToGo.Text;
             ArrayList list2 = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
@@ -105,7 +106,6 @@ namespace Kursovaya1._0
             }
             date.DataSource = list2;
             date.SelectedIndex = -1;
-
 
             int seats;
             for (int i = 0; i < table.Rows.Count; i++)
@@ -159,6 +159,11 @@ namespace Kursovaya1._0
                 MessageBox.Show("Не указано количество билетов!");
                 return;
             }
+            else if (FreeSeats.Text == "" || FreeSeats.Text == " " || FreeSeats.Text == "0")
+            {
+                MessageBox.Show("Нет свободных мест!");
+                return;
+            }
             else
             {
                 DataTable table = new DataTable();
@@ -170,6 +175,12 @@ namespace Kursovaya1._0
 
                 int n = Convert.ToInt32(TicketsAmmount.Text);
                 int m = Convert.ToInt32(FreeSeats.Text);
+                
+                if (n > m)
+                {
+                    MessageBox.Show("Недостаточно свободных мест!");
+                    return;
+                }
 
                 string data = date.Text;
                 int number = 0;

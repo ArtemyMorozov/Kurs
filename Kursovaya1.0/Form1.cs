@@ -45,7 +45,6 @@ namespace Kursovaya1._0
                 this.Hide();
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
-                //MessageBox.Show("Вход выполнен");
             }
             else
             {

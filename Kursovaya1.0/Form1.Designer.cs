@@ -39,10 +39,9 @@
             this.log_in.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.log_in.FlatAppearance.BorderSize = 0;
             this.log_in.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.log_in.Location = new System.Drawing.Point(111, 276);
-            this.log_in.Margin = new System.Windows.Forms.Padding(4);
+            this.log_in.Location = new System.Drawing.Point(83, 224);
             this.log_in.Name = "log_in";
-            this.log_in.Size = new System.Drawing.Size(190, 54);
+            this.log_in.Size = new System.Drawing.Size(142, 44);
             this.log_in.TabIndex = 0;
             this.log_in.Text = "Авторизоваться";
             this.log_in.UseVisualStyleBackColor = false;
@@ -51,11 +50,10 @@
             // loginField
             // 
             this.loginField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginField.Location = new System.Drawing.Point(111, 111);
-            this.loginField.Margin = new System.Windows.Forms.Padding(4);
+            this.loginField.Location = new System.Drawing.Point(83, 90);
             this.loginField.Multiline = true;
             this.loginField.Name = "loginField";
-            this.loginField.Size = new System.Drawing.Size(190, 35);
+            this.loginField.Size = new System.Drawing.Size(144, 29);
             this.loginField.TabIndex = 1;
             this.loginField.Tag = "";
             this.loginField.Enter += new System.EventHandler(this.loginField_Enter);
@@ -64,10 +62,9 @@
             // passField
             // 
             this.passField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passField.Location = new System.Drawing.Point(111, 176);
-            this.passField.Margin = new System.Windows.Forms.Padding(4);
+            this.passField.Location = new System.Drawing.Point(83, 143);
             this.passField.Name = "passField";
-            this.passField.Size = new System.Drawing.Size(190, 30);
+            this.passField.Size = new System.Drawing.Size(144, 26);
             this.passField.TabIndex = 2;
             this.passField.UseSystemPasswordChar = true;
             this.passField.Enter += new System.EventHandler(this.passField_Enter);
@@ -75,17 +72,18 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.ClientSize = new System.Drawing.Size(394, 460);
+            this.ClientSize = new System.Drawing.Size(296, 374);
             this.Controls.Add(this.passField);
             this.Controls.Add(this.loginField);
             this.Controls.Add(this.log_in);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
