@@ -57,9 +57,12 @@
             // 
             // ChooseWhereToGo
             // 
+            this.ChooseWhereToGo.DropDownHeight = 200;
             this.ChooseWhereToGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChooseWhereToGo.FormattingEnabled = true;
+            this.ChooseWhereToGo.IntegralHeight = false;
             this.ChooseWhereToGo.Location = new System.Drawing.Point(158, 7);
+            this.ChooseWhereToGo.MaxDropDownItems = 15;
             this.ChooseWhereToGo.Name = "ChooseWhereToGo";
             this.ChooseWhereToGo.Size = new System.Drawing.Size(121, 26);
             this.ChooseWhereToGo.TabIndex = 1;

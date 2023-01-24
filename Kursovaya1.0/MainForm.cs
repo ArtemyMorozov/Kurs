@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -20,6 +21,7 @@ namespace Kursovaya1._0
 {
     public partial class MainForm : Form
     {
+        private DataBase db;
         public MainForm()
         {
             InitializeComponent();
@@ -28,14 +30,11 @@ namespace Kursovaya1._0
         private void MainForm_Load(object sender, EventArgs e)
         {
             //int id;
-            DataBase db = new DataBase();
-
+            db = new DataBase();
             db.getConnection();
-            String city = "SELECT * FROM schedule";
 
-            MySqlCommand command = new MySqlCommand(city, db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM schedule", db.getConnection());
             DataTable table = new DataTable();
-
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             adapter.Fill(table);
@@ -43,12 +42,10 @@ namespace Kursovaya1._0
             ArrayList list = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if (list.Contains(table.Rows[i][1].ToString()))
+                if (!list.Contains(table.Rows[i][1].ToString()))
                 {
-                    list.Remove(table.Rows[i][1].ToString());
-                }
-                else
                     list.Add(table.Rows[i][1].ToString());
+                }
             }
 
             ChooseWhereToGo.DataSource = list;
@@ -64,12 +61,8 @@ namespace Kursovaya1._0
         private void ChooseWhereToGo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string lol = ChooseWhereToGo.Text;
-            DataBase db = new DataBase();
 
-            db.getConnection();
-            String Time = "SELECT * FROM schedule";
-
-            MySqlCommand command = new MySqlCommand(Time, db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM schedule", db.getConnection());
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
@@ -81,12 +74,10 @@ namespace Kursovaya1._0
             {
                 if (table.Rows[i][1].ToString() == lol)
                 {
-                    if (list.Contains(table.Rows[i][2]))
+                    if (!list.Contains(table.Rows[i][2]))
                     {
-                        list.Remove(table.Rows[i][2]);
-                    }
-                    else
                         list.Add(table.Rows[i][2]);
+                    }
                 }
             }
 
@@ -129,60 +120,34 @@ namespace Kursovaya1._0
 
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void date_SelectedIndexChanged(object sender, EventArgs e)
         {
             string data = date.Text;
-            DataBase db = new DataBase();
 
-            db.getConnection();
-            String city = "SELECT * FROM schedule";
-
-            MySqlCommand command = new MySqlCommand(city, db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM schedule", db.getConnection());
             DataTable table = new DataTable();
 
-           
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             adapter.Fill(table);
-            string transfer ="";
-            string price = "";
+            string transfer = "";
             int seats;
-            ArrayList list = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 if (data == table.Rows[i][2].ToString())
                 {
                     transfer = table.Rows[i][3].ToString();
-                    price = table.Rows[i][6].ToString();
                     seats = Convert.ToInt32(table.Rows[i][5]);
                     FreeSeats.Text = seats.ToString();
                 }
             }
             TransferTextDate.Text = transfer.ToString();
-            PriceText.Text = price.ToString(); 
         }
 
         private void Buy_Click(object sender, EventArgs e)
         {
-            string connectionString = "server=sql11.freesqldatabase.com;user=sql11592104;database=sql11592104;password=nAh975wzgx;";
-            // объект для установления соединения с БД
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            // открываем соединение
-            connection.Open();
-
             DataTable table = new DataTable();
-            String Time = "SELECT * FROM schedule";
 
-            MySqlCommand com = new MySqlCommand(Time, connection);
+            MySqlCommand com = new MySqlCommand("SELECT * FROM schedule", db.getConnection());
             MySqlDataAdapter adapter = new MySqlDataAdapter(com);
             adapter.Fill(table);
 
@@ -191,7 +156,6 @@ namespace Kursovaya1._0
 
             string data = date.Text;
             int number = 0;
-            ArrayList list = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 if (data == table.Rows[i][2].ToString())
@@ -202,9 +166,8 @@ namespace Kursovaya1._0
             }
 
             int minus = m - n;
-            string query = "UPDATE schedule SET availableSeats = @availableSeats WHERE id = @id";
             // объект для выполнения SQL-запроса
-            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlCommand command = new MySqlCommand("UPDATE schedule SET availableSeats = @availableSeats WHERE id = @id", db.getConnection());
             command.Parameters.AddWithValue("@availableSeats", Convert.ToInt32(minus));
             command.Parameters.AddWithValue("@id", number);
             // выполняем запрос
@@ -214,34 +177,49 @@ namespace Kursovaya1._0
         
         private void TicketsAmmount_TextChanged(object sender, EventArgs e)
         {
-            
-            string tickets = TicketsAmmount.Text;
-            string Price = PriceText.Text;
-            int newn = 0;
-            int n, m;
-            if (TicketsAmmount.Text == "")
+            String city = "SELECT * FROM schedule";
+            MySqlCommand command = new MySqlCommand(city, db.getConnection());
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            adapter.Fill(table);
+
+            int n;
+            string data = date.Text;
+            string price = "0";
+            for (int i = 0; i < table.Rows.Count; i++)
             {
-                PriceText.Text = Price;
-                return;
-            }
-            else if (TicketsAmmount.Text != "")
-            {
-                n = Convert.ToInt32(TicketsAmmount.Text);
-                m = Convert.ToInt32(Price);
-                int sum = n * m;
-                int del = sum / n;
-                if (n > newn)
+                if (data == table.Rows[i][2].ToString())
                 {
+                    price = table.Rows[i][6].ToString();
+                }
+            }
+            n = Convert.ToInt32(price);
+            if (TicketsAmmount.Text != "")
+            {
+                int m;
+                if (!int.TryParse(TicketsAmmount.Text, out m))
+                {
+                    MessageBox.Show("Введите число");
+                    TicketsAmmount.Text = "0";
+                }
+                else if (m < 0)
+                {
+                    MessageBox.Show("Введите положительное число");
+                    TicketsAmmount.Text = "0";
+                }
+                else
+                {
+                    int sum = m * n;
                     PriceText.Text = sum.ToString();
-                    n = newn;
-                }      
-                else if (n < newn)
-                {
-                    PriceText.Text = del.ToString();
-                    n = newn;
-                }     
+                }
             }
-            
+            else
+                PriceText.Text = "0";
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
