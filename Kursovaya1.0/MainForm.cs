@@ -163,7 +163,7 @@ namespace Kursovaya1._0
                     break;
                 }
             }
-
+            db.openConnection();
             int minus = m - n;
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand("UPDATE schedule SET availableSeats = @availableSeats WHERE id = @id", db.getConnection());
