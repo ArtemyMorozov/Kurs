@@ -1,4 +1,6 @@
-﻿namespace Kursovaya1._0
+﻿using System.Windows.Forms;
+
+namespace Kursovaya1._0
 {
     partial class MainForm
     {
@@ -72,8 +74,6 @@
             this.ChooseWhereToGo.Size = new System.Drawing.Size(251, 32);
             this.ChooseWhereToGo.TabIndex = 1;
             this.ChooseWhereToGo.SelectedIndexChanged += new System.EventHandler(this.ChooseWhereToGo_SelectedIndexChanged);
-            this.ChooseWhereToGo.Enter += new System.EventHandler(this.ChooseWhereToGo_Enter);
-            this.ChooseWhereToGo.Leave += new System.EventHandler(this.ChooseWhereToGo_Leave);
             // 
             // Closelabel
             // 
@@ -106,6 +106,7 @@
             this.TransferTextDate.Name = "TransferTextDate";
             this.TransferTextDate.Size = new System.Drawing.Size(251, 32);
             this.TransferTextDate.TabIndex = 10;
+            this.TransferTextDate.ReadOnly = true;
             // 
             // label1
             // 
@@ -126,6 +127,7 @@
             this.FreeSeats.Name = "FreeSeats";
             this.FreeSeats.Size = new System.Drawing.Size(251, 32);
             this.FreeSeats.TabIndex = 12;
+            this.FreeSeats.ReadOnly = true;
             // 
             // label2
             // 
@@ -167,6 +169,7 @@
             this.PriceText.Name = "PriceText";
             this.PriceText.Size = new System.Drawing.Size(251, 32);
             this.PriceText.TabIndex = 16;
+            this.PriceText.ReadOnly = true;
             // 
             // label4
             // 
@@ -213,7 +216,7 @@
             this.ClosestTime.Name = "ClosestTime";
             this.ClosestTime.Size = new System.Drawing.Size(251, 32);
             this.ClosestTime.TabIndex = 19;
-            this.ClosestTime.TextChanged += new System.EventHandler(this.ClosestTime_TextChanged);
+            this.ClosestTime.ReadOnly = true;
             // 
             // pictureBox1
             // 
@@ -224,6 +227,10 @@
             this.pictureBox1.Size = new System.Drawing.Size(417, 329);
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
+            //
+            // FormClosing
+            //
+            this.FormClosing += MainForm_FormClosing;
             // 
             // MainForm
             // 

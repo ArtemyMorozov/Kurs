@@ -161,9 +161,6 @@ namespace Kursovaya1._0
             }
             else
             {
-
-
-
                 DataTable table = new DataTable();
 
                 MySqlCommand com = new MySqlCommand("SELECT * FROM schedule", db.getConnection());
@@ -184,8 +181,6 @@ namespace Kursovaya1._0
                         break;
                     }
                 }
-
-
                 
                 int minus = m - n;
                 // объект для выполнения SQL-запроса
@@ -250,21 +245,6 @@ namespace Kursovaya1._0
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void ClosestTime_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ChooseWhereToGo_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ChooseWhereToGo_Leave(object sender, EventArgs e)
-        {
-
         }
     }
 }
