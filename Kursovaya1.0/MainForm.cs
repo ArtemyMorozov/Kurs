@@ -185,7 +185,7 @@ namespace Kursovaya1._0
             string n;
             n = TicketsAmmount.Text;
         }
-        private void log_in_Click(object sender, EventArgs e)
+        private void Buy_Click(object sender, EventArgs e)
         {
             string connectionString = "server=sql11.freesqldatabase.com;user=sql11592104;database=sql11592104;password=nAh975wzgx;";
             // объект для установления соединения с БД
@@ -214,7 +214,6 @@ namespace Kursovaya1._0
                     break;
                 }
             }
-
 
             int minus = m - n;
             string query = "UPDATE schedule SET availableSeats = @availableSeats WHERE id = @id";
