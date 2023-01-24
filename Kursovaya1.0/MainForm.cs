@@ -168,6 +168,7 @@ namespace Kursovaya1._0
 
                 MySqlCommand com = new MySqlCommand("SELECT * FROM schedule", db.getConnection());
                 MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                db.openConnection();
                 adapter.Fill(table);
 
                 int n = Convert.ToInt32(TicketsAmmount.Text);
@@ -185,11 +186,7 @@ namespace Kursovaya1._0
                 }
 
 
-                string connectionString = "server=sql11.freesqldatabase.com;user=sql11592104;database=sql11592104;password=nAh975wzgx;";
-                // объект для установления соединения с БД
-                MySqlConnection connection = new MySqlConnection(connectionString);
-                // открываем соединение
-                connection.Open();
+                
                 int minus = m - n;
                 // объект для выполнения SQL-запроса
                 MySqlCommand command = new MySqlCommand("UPDATE schedule SET availableSeats = @availableSeats WHERE id = @id", db.getConnection());
@@ -197,6 +194,7 @@ namespace Kursovaya1._0
                 command.Parameters.AddWithValue("@id", number);
                 // выполняем запрос
                 command.ExecuteNonQuery();
+
             }
         }
         
