@@ -144,34 +144,60 @@ namespace Kursovaya1._0
 
         private void Buy_Click(object sender, EventArgs e)
         {
-            DataTable table = new DataTable();
-
-            MySqlCommand com = new MySqlCommand("SELECT * FROM schedule", db.getConnection());
-            MySqlDataAdapter adapter = new MySqlDataAdapter(com);
-            adapter.Fill(table);
-
-            int n = Convert.ToInt32(TicketsAmmount.Text);
-            int m = Convert.ToInt32(FreeSeats.Text);
-
-            string data = date.Text;
-            int number = 0;
-            for (int i = 0; i < table.Rows.Count; i++)
+            if (ChooseWhereToGo.Text == " " || ChooseWhereToGo.Text == "")
             {
-                if (data == table.Rows[i][2].ToString())
-                {
-                    number = i+1;
-                    break;
-                }
+                MessageBox.Show("Не выбран пункт назначения!");
+                return;
             }
+            else if (date.Text == "" || date.Text == " ")
+            {
+                MessageBox.Show("Не выбрана дата!");
+                return;
+            }
+            else if (TicketsAmmount.Text == "" || TicketsAmmount.Text == " " || TicketsAmmount.Text == "0")
+            {
+                MessageBox.Show("Не указано количество билетов!");
+                return;
+            }
+            else
+            {
 
-            int minus = m - n;
-            // объект для выполнения SQL-запроса
-            MySqlCommand command = new MySqlCommand("UPDATE schedule SET availableSeats = @availableSeats WHERE id = @id", db.getConnection());
-            command.Parameters.AddWithValue("@availableSeats", Convert.ToInt32(minus));
-            command.Parameters.AddWithValue("@id", number);
-            // выполняем запрос
-            command.ExecuteNonQuery();
 
+
+                DataTable table = new DataTable();
+
+                MySqlCommand com = new MySqlCommand("SELECT * FROM schedule", db.getConnection());
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                adapter.Fill(table);
+
+                int n = Convert.ToInt32(TicketsAmmount.Text);
+                int m = Convert.ToInt32(FreeSeats.Text);
+
+                string data = date.Text;
+                int number = 0;
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    if (data == table.Rows[i][2].ToString())
+                    {
+                        number = i + 1;
+                        break;
+                    }
+                }
+
+
+                string connectionString = "server=sql11.freesqldatabase.com;user=sql11592104;database=sql11592104;password=nAh975wzgx;";
+                // объект для установления соединения с БД
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                // открываем соединение
+                connection.Open();
+                int minus = m - n;
+                // объект для выполнения SQL-запроса
+                MySqlCommand command = new MySqlCommand("UPDATE schedule SET availableSeats = @availableSeats WHERE id = @id", db.getConnection());
+                command.Parameters.AddWithValue("@availableSeats", Convert.ToInt32(minus));
+                command.Parameters.AddWithValue("@id", number);
+                // выполняем запрос
+                command.ExecuteNonQuery();
+            }
         }
         
         private void TicketsAmmount_TextChanged(object sender, EventArgs e)
