@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.FreeSeats = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TicketsAmmount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PriceText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -130,14 +130,15 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Количество свободных мест:";
             // 
-            // textBox4
+            // TicketsAmmount
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(796, 294);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(171, 29);
-            this.textBox4.TabIndex = 14;
+            this.TicketsAmmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TicketsAmmount.Location = new System.Drawing.Point(796, 294);
+            this.TicketsAmmount.Margin = new System.Windows.Forms.Padding(4);
+            this.TicketsAmmount.Name = "TicketsAmmount";
+            this.TicketsAmmount.Size = new System.Drawing.Size(171, 29);
+            this.TicketsAmmount.TabIndex = 14;
+            this.TicketsAmmount.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label3
             // 
@@ -182,6 +183,7 @@
             this.log_in.TabIndex = 17;
             this.log_in.Text = "Оформить";
             this.log_in.UseVisualStyleBackColor = false;
+            this.log_in.Click += new System.EventHandler(this.log_in_Click);
             // 
             // date
             // 
@@ -214,7 +216,7 @@
             this.Controls.Add(this.log_in);
             this.Controls.Add(this.PriceText);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.TicketsAmmount);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.FreeSeats);
             this.Controls.Add(this.label2);
@@ -243,7 +245,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox FreeSeats;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TicketsAmmount;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox PriceText;
         private System.Windows.Forms.Label label4;

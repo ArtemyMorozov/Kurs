@@ -176,5 +176,29 @@ namespace Kursovaya1._0
         {
 
         }
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            string n;
+            n = TicketsAmmount.Text;
+        }
+        private void log_in_Click(object sender, EventArgs e)
+        {
+            string connectionString = "server=sql11.freesqldatabase.com;user=sql11592104;database=sql11592104;password=nAh975wzgx;";
+            // объект для установления соединения с БД
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            // открываем соединение
+            connection.Open();
+            int minus = 10-6;
+            string n = TicketsAmmount.Text;
+            string m = "8";
+            string query = "UPDATE schedule SET cost = 6 WHERE id = 1";
+            // объект для выполнения SQL-запроса
+            MySqlCommand command = new MySqlCommand(query, connection);
+            // выполняем запрос
+            command.ExecuteNonQuery();
+
+        }
+
+
     }
 }
