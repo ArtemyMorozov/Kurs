@@ -17,9 +17,6 @@ namespace Kursovaya1._0
         public Form1()
         {
             InitializeComponent();
-
-            this.passField.AutoSize = false;
-            this.passField.Size = new Size(this.passField.Size.Width, 29);
         }
 
         private void log_in_Click(object sender, EventArgs e)
@@ -55,6 +52,8 @@ namespace Kursovaya1._0
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.passField.AutoSize = false;
+            this.passField.Size = new Size(this.passField.Size.Width, 29);
             loginField.Text = "login";
             loginField.ForeColor = Color.Gray;
             passField.Text = "password";
