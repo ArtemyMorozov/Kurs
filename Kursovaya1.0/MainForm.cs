@@ -30,6 +30,7 @@ namespace Kursovaya1._0
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            date.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             db = new DataBase();
             db.getConnection();
 
@@ -67,7 +68,6 @@ namespace Kursovaya1._0
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             adapter.Fill(table);
-
             //создать массив типа DateTime для сравнения даты и времени из бд
             ArrayList list = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
@@ -144,6 +144,7 @@ namespace Kursovaya1._0
 
         private void Buy_Click(object sender, EventArgs e)
         {
+            bool find = true;
             if (ChooseWhereToGo.Text == " " || ChooseWhereToGo.Text == "")
             {
                 MessageBox.Show("Не выбран пункт назначения!");
@@ -194,6 +195,33 @@ namespace Kursovaya1._0
                 }
                 
                 int minus = m - n;
+
+                string place = ChooseWhereToGo.Text;
+
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    if (place != table.Rows[i][1].ToString())
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        find = false;
+                    }
+                }
+                if (find == true)
+                {
+                    MessageBox.Show("Билетов в выбранное место нет!");
+                    ChooseWhereToGo.Text = "";
+                    date.Text = "";
+                    TicketsAmmount.Clear();
+                    ClosestTime.Clear();
+                    FreeSeats.Clear();
+                    PriceText.Clear();
+                    TransferTextDate.Clear();
+                    return;
+                }
+
                 // объект для выполнения SQL-запроса
                 MySqlCommand command = new MySqlCommand("UPDATE schedule SET availableSeats = @availableSeats WHERE id = @id", db.getConnection());
                 command.Parameters.AddWithValue("@availableSeats", Convert.ToInt32(minus));
