@@ -28,7 +28,7 @@ namespace Kursovaya1._0
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e) 
         {
             date.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             db = new DataBase();
@@ -61,7 +61,7 @@ namespace Kursovaya1._0
 
         private void ChooseWhereToGo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string lol = ChooseWhereToGo.Text;
+            string city = ChooseWhereToGo.Text;
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM schedule", db.getConnection());
             DataTable table = new DataTable();
@@ -72,7 +72,7 @@ namespace Kursovaya1._0
             ArrayList list = new ArrayList();
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if (table.Rows[i][1].ToString() == lol)
+                if (table.Rows[i][1].ToString() == city)
                 {
                     if (!list.Contains(table.Rows[i][2]))
                     {
@@ -241,8 +241,7 @@ namespace Kursovaya1._0
         
         private void TicketsAmmount_TextChanged(object sender, EventArgs e)
         {
-            String city = "SELECT * FROM schedule";
-            MySqlCommand command = new MySqlCommand(city, db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM schedule", db.getConnection());
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             adapter.Fill(table);
